@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechVerse — Computer Components Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Stars Background -->
+  <canvas id="starfield"></canvas>
+
+  <!-- Jupiter Atmospheric Glow -->
+  <div class="jupiter-glow"></div>
+  <div class="nebula-1"></div>
+  <div class="nebula-2"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">TECH<span class="logo-accent">VERSE</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#specs">Specs Guide</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero">Home</a>
+      <a href="#components">Components</a>
+      <a href="#specs">Specs Guide</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Mission Control · Est. 2025</div>
+      <h1 class="hero-title">
+        Explore the
+        <span class="title-gradient">Universe</span>
+        of PC Components
+      </h1>
+      <p class="hero-subtitle">
+        Your complete orbital guide to CPUs, GPUs, RAM, storage, and every
+        component that powers modern computing — explained with precision.
+      </p>
+      <div class="hero-actions">
+        <a href="#components" class="btn-primary">Launch Explorer</a>
+        <a href="#specs" class="btn-ghost">Specs Guide</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" id="visitorCount">0</span><span class="stat-label">Visitors</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">12</span><span class="stat-label">Components</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orbit-ring orbit-ring-1"></div>
+      <div class="orbit-ring orbit-ring-2"></div>
+      <div class="orbit-ring orbit-ring-3"></div>
+      <div class="planet-core">
+        <div class="planet-surface"></div>
+        <div class="planet-band band-1"></div>
+        <div class="planet-band band-2"></div>
+        <div class="planet-band band-3"></div>
+        <div class="planet-shine"></div>
+      </div>
+      <div class="orbit-dot dot-1"></div>
+      <div class="orbit-dot dot-2"></div>
+      <div class="orbit-dot dot-3"></div>
+    </div>
+  </section>
+
+  <!-- Components Section -->
+  <section id="components">
+    <div class="section-header">
+      <div class="section-eyebrow">Core Systems</div>
+      <h2>PC Component Library</h2>
+      <p>Click any component to explore detailed specifications, how it works, and what to look for when buying.</p>
+    </div>
+    <div class="components-grid" id="componentsGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- Component Detail Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-header">
+        <div class="modal-icon" id="modalIcon"></div>
+        <div>
+          <div class="modal-category" id="modalCategory"></div>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Specs Guide Section -->
+  <section id="specs">
+    <div class="section-header">
+      <div class="section-eyebrow">Mission Brief</div>
+      <h2>How to Read Specs</h2>
+      <p>Decode the numbers that matter when comparing hardware.</p>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-card">
+        <div class="spec-icon">⚡</div>
+        <h3>Clock Speed (GHz)</h3>
+        <p>Measures how many cycles per second a processor completes. Higher GHz = faster single-core tasks. A 4.5 GHz CPU runs 4.5 billion cycles per second.</p>
+        <div class="spec-bar-label">Performance Impact</div>
+        <div class="spec-bar"><div class="spec-fill" style="width:85%"></div></div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🧵</div>
+        <h3>Cores &amp; Threads</h3>
+        <p>Cores are independent processing units. Threads are virtual cores via Hyper-Threading. More cores = better multitasking and rendering performance.</p>
+        <div class="spec-bar-label">Performance Impact</div>
+        <div class="spec-bar"><div class="spec-fill" style="width:90%"></div></div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">💾</div>
+        <h3>VRAM (GB)</h3>
+        <p>GPU memory used for textures, framebuffers, and models. 8GB handles 1080p/1440p gaming; 12–16GB is recommended for 4K and AI workloads.</p>
+        <div class="spec-bar-label">Performance Impact</div>
+        <div class="spec-bar"><div class="spec-fill" style="width:80%"></div></div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🔁</div>
+        <h3>RAM Speed (MHz)</h3>
+        <p>Data transfer rate of system memory. DDR5-6000 is faster than DDR4-3200. Affects latency and bandwidth, crucial for CPU-bound tasks.</p>
+        <div class="spec-bar-label">Performance Impact</div>
+        <div class="spec-bar"><div class="spec-fill" style="width:65%"></div></div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">📡</div>
+        <h3>TDP (Watts)</h3>
+        <p>Thermal Design Power — how much heat a chip generates under load. Higher TDP needs better cooling. Affects power consumption and case airflow.</p>
+        <div class="spec-bar-label">Cooling Requirement</div>
+        <div class="spec-bar"><div class="spec-fill" style="width:70%; background: linear-gradient(90deg, #f97316, #ef4444)"></div></div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">🚀</div>
+        <h3>PCIe Generation</h3>
+        <p>Data pathway between CPU, GPU, and NVMe drives. PCIe 5.0 doubles bandwidth vs PCIe 4.0 — critical for top-end NVMe SSDs and future GPUs.</p>
+        <div class="spec-bar-label">Bandwidth Impact</div>
+        <div class="spec-bar"><div class="spec-fill" style="width:75%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section id="comparison">
+    <div class="section-header">
+      <div class="section-eyebrow">Side by Side</div>
+      <h2>CPU vs GPU — Core Differences</h2>
+      <p>Understanding when each processor excels.</p>
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th class="cpu-col">CPU</th>
+            <th class="gpu-col">GPU</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Core Count</td><td>4–64 cores</td><td>Thousands of shader units</td></tr>
+          <tr><td>Primary Job</td><td>Sequential, complex logic</td><td>Parallel, repetitive tasks</td></tr>
+          <tr><td>Clock Speed</td><td>3–6 GHz per core</td><td>1–3 GHz (shader clock)</td></tr>
+          <tr><td>Cache</td><td>L1/L2/L3 (up to 256MB)</td><td>L1/L2 on-chip, VRAM off-chip</td></tr>
+          <tr><td>Best For</td><td>Gaming, OS, productivity</td><td>Rendering, AI, video encoding</td></tr>
+          <tr><td>Memory</td><td>System RAM (DDR5)</td><td>Dedicated VRAM (GDDR7)</td></tr>
+          <tr><td>Power Range</td><td>65W – 250W</td><td>75W – 600W</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews">
+    <div class="section-header">
+      <div class="section-eyebrow">Mission Logs</div>
+      <h2>Community Reviews</h2>
+      <p>Share your hardware experience with the TechVerse community.</p>
+    </div>
+
+    <!-- Review Form -->
+    <div class="review-form-wrap">
+      <h3>Leave a Review</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reviewName">Your Name</label>
+          <input type="text" id="reviewName" placeholder="Commander Smith" />
+        </div>
+        <div class="form-group">
+          <label for="reviewComponent">Component</label>
+          <select id="reviewComponent">
+            <option value="">Select a component</option>
+            <option>CPU</option><option>GPU</option><option>RAM</option>
+            <option>Motherboard</option><option>Storage (SSD/HDD)</option>
+            <option>PSU</option><option>CPU Cooler</option><option>PC Case</option>
+            <option>Monitor</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Rating</label>
+        <div class="star-rating" id="starRating">
+          <span data-val="1">★</span>
+          <span data-val="2">★</span>
+          <span data-val="3">★</span>
+          <span data-val="4">★</span>
+          <span data-val="5">★</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="reviewText">Your Review</label>
+        <textarea id="reviewText" rows="4" placeholder="Tell the galaxy what you think..."></textarea>
+      </div>
+      <button class="btn-primary" id="submitReview">Submit Review</button>
+    </div>
+
+    <!-- Reviews Display -->
+    <div class="reviews-list" id="reviewsList"></div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <div class="section-eyebrow">Transmission</div>
+        <h2>Mission Control</h2>
+        <p>Questions about hardware? Want a component explained? Send a transmission and we'll respond.</p>
+        <div class="contact-links">
+          <a href="mailto:hello@techverse.space" class="contact-link">📡 hello@techverse.space</a>
+          <a href="#" class="contact-link">🐦 @TechVerse</a>
+          <a href="#" class="contact-link">💬 Discord Community</a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-group">
+          <label for="contactName">Name</label>
+          <input type="text" id="contactName" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email</label>
+          <input type="email" id="contactEmail" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="contactMsg">Message</label>
+          <textarea id="contactMsg" rows="4" placeholder="Your message..."></textarea>
+        </div>
+        <button class="btn-primary" id="sendContact">Send Transmission</button>
+        <div class="form-feedback" id="contactFeedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">TECH<span class="logo-accent">VERSE</span></span>
+      </div>
+      <p class="footer-copy">© 2025 TechVerse. Built for curious explorers across the galaxy.</p>
+      <div class="visitor-counter">
+        <span class="pulse-dot"></span>
+        <span id="footerVisitor">Loading visitors...</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
